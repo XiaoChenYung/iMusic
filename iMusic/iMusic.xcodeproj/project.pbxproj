@@ -13,9 +13,12 @@
 		4AE5CA741BE3AE5F00F6331D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5CA721BE3AE5F00F6331D /* Main.storyboard */; };
 		4AE5CA761BE3AE5F00F6331D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5CA751BE3AE5F00F6331D /* Assets.xcassets */; };
 		4AE5CA791BE3AE5F00F6331D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE5CA771BE3AE5F00F6331D /* LaunchScreen.storyboard */; };
+		A7D1887F333E669FBC9ABA8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895F601F7AD50BF42105C4D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0895F601F7AD50BF42105C4D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C4358A40474003BC25A1CD6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4AE5CA661BE3AE5F00F6331D /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE5CA6A1BE3AE5F00F6331D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AE5CA6C1BE3AE5F00F6331D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		4AE5CA751BE3AE5F00F6331D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AE5CA781BE3AE5F00F6331D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AE5CA7A1BE3AE5F00F6331D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8455860CCC532D757C90489 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D1887F333E669FBC9ABA8A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				4AE5CA681BE3AE5F00F6331D /* iMusic */,
 				4AE5CA671BE3AE5F00F6331D /* Products */,
+				78DA2848527F114E8E344776 /* Pods */,
+				94F04BCD78168EDFC3BF1F14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		78DA2848527F114E8E344776 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C4358A40474003BC25A1CD6 /* Pods.debug.xcconfig */,
+				F8455860CCC532D757C90489 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		94F04BCD78168EDFC3BF1F14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0895F601F7AD50BF42105C4D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AE5CA7D1BE3AE5F00F6331D /* Build configuration list for PBXNativeTarget "iMusic" */;
 			buildPhases = (
+				8BAC034B0FD5F987C4495A94 /* Check Pods Manifest.lock */,
 				4AE5CA621BE3AE5F00F6331D /* Sources */,
 				4AE5CA631BE3AE5F00F6331D /* Frameworks */,
 				4AE5CA641BE3AE5F00F6331D /* Resources */,
+				CECB9485633D71D39943B004 /* Embed Pods Frameworks */,
+				97AE704EDA5A61324D809CEA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8BAC034B0FD5F987C4495A94 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		97AE704EDA5A61324D809CEA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CECB9485633D71D39943B004 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AE5CA621BE3AE5F00F6331D /* Sources */ = {
@@ -260,6 +335,7 @@
 		};
 		4AE5CA7E1BE3AE5F00F6331D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C4358A40474003BC25A1CD6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iMusic/Info.plist;
@@ -271,6 +347,7 @@
 		};
 		4AE5CA7F1BE3AE5F00F6331D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8455860CCC532D757C90489 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iMusic/Info.plist;
@@ -299,6 +376,7 @@
 				4AE5CA7F1BE3AE5F00F6331D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
